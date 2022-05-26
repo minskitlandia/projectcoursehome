@@ -1,0 +1,10 @@
+CREATE TABLE Ads
+(
+    id          INT PRIMARY KEY AUTO_INCREMENT,
+    title       VARCHAR(50) NOT NULL,
+    subtitle    VARCHAR(50),
+    description VARCHAR(255),
+    price       DECIMAL(6, 2),
+    user_id     INT,
+    FOREIGN KEY (user_id) REFERENCES user (id)
+);

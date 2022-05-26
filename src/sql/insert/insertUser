@@ -1,0 +1,8 @@
+INSERT INTO User
+VALUES (1, 'admin', 'admin', 1);
+
+INSERT INTO User
+VALUES (2, 'naumenko', 'admin', 1);
+
+INSERT INTO User
+VALUES (3, 'user', 'user', 2);

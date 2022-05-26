@@ -1,0 +1,8 @@
+CREATE TABLE User
+(
+    id       INT PRIMARY KEY AUTO_INCREMENT,
+    login    VARCHAR(40) NOT NULL UNIQUE,
+    password VARCHAR(80),
+    role_id  INT,
+    FOREIGN KEY (role_id) REFERENCES Roles (id)
+);

@@ -1,0 +1,11 @@
+INSERT INTO `project`.`ads` (`id`, `title`, `subtitle`, `description`, `price`, `user_id`)
+VALUES
+('1', 'Продажа', 'Продается квартира', 'квартира 2 комнаты в идеальном состоянии', '500.00', '1');
+
+INSERT INTO `project`.`ads` (`id`, `title`, `subtitle`, `description`, `price`, `user_id`)
+VALUES
+('2', 'Продажа', 'продается письменный стол', 'Письменный стол, идеально подойдет для учеников начальных классов, недорого', '20', '2');
+
+INSERT INTO `project`.`ads` (`id`, `title`, `subtitle`, `description`, `price`, `user_id`)
+VALUES
+('3', 'Продажа', 'ноутбук', 'продается ноутбук старый, но рабочий, отдам за вкусняшки', '0', '1');
