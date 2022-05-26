@@ -7,17 +7,22 @@
         <img src="<%=URL%>/img/logo.png" alt="картинка">
     </div>
 
-    <c:if test="<%=Util.user.getId()!= 0%>">
-        <h3>Приветствую тебя <%=Util.user.getLogin()%>
+    <c:if test="<%=Util.USER.getId()!= 0%>">
+        <h3>Приветствую тебя <%=Util.USER.getLogin()%>
         </h3>
     </c:if>
 
-    <c:if test="<%=Util.user.getId()== 0%>">
+    <c:if test="<%=Util.USER.getId()== 0%>">
         <h3>Приветствую тебя гость</h3>
     </c:if>
 
     <div class="auth">
-        <a class="btn btn-outline-success" href="<%=request.getContextPath()%>/signin">SignIn</a>
-        <a class="btn btn-outline-danger" href="<%=request.getContextPath()%>/signup">SignUp</a>
+        <c:if test="<%=Util.USER.getId()== 0%>">
+            <a class="btn btn-outline-success" href="<%=request.getContextPath()%>/signin">SignIn</a>
+        </c:if>
+        <c:if test="<%=Util.USER.getId()!= 0%>">
+            <a class="btn btn-outline-danger" href="<%=request.getContextPath()%>/logout">logout</a>
+        </c:if>
+        <a class="btn btn-outline-primary" href="<%=request.getContextPath()%>/signup">SignUp</a>
     </div>
 </div>

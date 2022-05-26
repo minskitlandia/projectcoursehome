@@ -4,5 +4,5 @@ import model.User;
 
 public interface AuthDao {
     User login(User user);
-    void signin(User user);
+    void signup(User user);
 }

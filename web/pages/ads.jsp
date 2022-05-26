@@ -16,9 +16,12 @@
 <%@include file="../include/nav.jsp" %>
 
 
-<div class="container text-left">
-    <a href="<%=request.getContextPath()%>/ads-new" class="btn btn-success">Создать объявление</a>
-</div>
+<c:if test="<%=Util.USER.getId()!= 0%>">
+    <div class="container text-left">
+        <a href="<%=request.getContextPath()%>/ads-new" class="btn btn-success">Создать объявление</a>
+    </div>
+</c:if>
+
 
 <c:forEach var="ads" items="${ads}">
     <div class="container">
@@ -27,17 +30,17 @@
         </div>
         <div class="content">
             <div class="ads">
-                <img src="<%=URL%>/img/ads.jpg">
+                <img src="<%=URL%>/img/${ads.image}">
             </div>
             <div class="content-body">
 
                 <h2 style="color: black;"><c:out value="${ads.title}"/></h2>
                 <h5 style="color: green;"><c:out value="${ads.subtitle}"/></h5>
-                    <span>
+                <span>
                         <p><c:out value="${ads.description}"/> <a href="#">Подробнее</a></p>
                     </span>
-                    <div class="price" style="color: orange; font-size: 25px; "><b><c:out value="${ads.price}"/></b></div>
-                    <a class="edit-ads btn btn-outline-dark" href="ads-edit?id=<c:out value='${ads.id}'/>">Редактировать</a>
+                <div class="price" style="color: orange; font-size: 25px; "><b><c:out value="${ads.price}"/></b></div>
+                <a class="edit-ads btn btn-outline-dark" href="ads-edit?id=<c:out value='${ads.id}'/>">Редактировать</a>
             </div>
         </div>
     </div>
@@ -45,7 +48,6 @@
 
 
 <a href="<%=request.getContextPath()%>/ads#" class="btn btn-outline-warning pageup">на верх</a>
-
 
 
 <footer>

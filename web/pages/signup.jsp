@@ -16,21 +16,22 @@
 <body>
 <div class="container">
     <div style="margin: 150px 30%">
+        <form action="<%=request.getContextPath()%>/signup" method="post">
 
-        <form action="<%=request.getContextPath()%>/signin" method="post">
+            <h1>SignUp User</h1>
+
 
             <fieldset class="form-group mb-5">
-                <input type="text" placeholder="login" class="form-control" name="login" required="required"/>
+                <input type="text" class="form-control" name="login" placeholder="login" required="required">
             </fieldset>
 
             <fieldset class="form-group mb-5">
-                <input type="password" class="form-control" name="password" required="required"/>
+                <input type="text" class="form-control" placeholder="password" name="password">
             </fieldset>
 
             <fieldset class="form-group mb-5">
-                <button type="submit" class="btn btn-primary form-control">LOGIN</button>
+                <button type="submit" class="btn btn-success form-control">SIGNUP</button>
             </fieldset>
-
         </form>
     </div>
 </div>

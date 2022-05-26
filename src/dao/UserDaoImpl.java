@@ -152,7 +152,7 @@ public class UserDaoImpl implements BaseDao<User>, AuthDao {
     }
 
     @Override
-    public void signin(User user) {
-
+    public void signup(User user) {
+        insert(user);
     }
 }

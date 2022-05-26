@@ -81,6 +81,7 @@ public class AdsDaoImpl implements BaseDao<Ads> {
                         .description(resultSet.getString(4))
                         .price(resultSet.getDouble(5))
                         .user_id(resultSet.getInt(6))
+                        .image(resultSet.getString(7))
                         .build();
             }
         } catch (SQLException e) {
@@ -104,6 +105,7 @@ public class AdsDaoImpl implements BaseDao<Ads> {
                         .description(resultSet.getString(4))
                         .price(resultSet.getDouble(5))
                         .user_id(resultSet.getInt(6))
+                        .image(resultSet.getString(7))
                         .build()
                 );
             }

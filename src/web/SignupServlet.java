@@ -12,35 +12,28 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "LoginServlet", urlPatterns = "/signin")
-public class LoginServlet extends HttpServlet {
+@WebServlet(name = "SignupServlet", urlPatterns = "/signup")
+public class SignupServlet extends HttpServlet {
 
     AuthDao authDao;
 
-    public LoginServlet() {
+    public SignupServlet() {
         this.authDao = new UserDaoImpl();
     }
 
-
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        RequestDispatcher dispatcher = req.getRequestDispatcher("pages/signin.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("pages/signup.jsp");
         dispatcher.forward(req, resp);
-
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        User user = User.builder()
+        this.authDao.signup(User.builder()
                 .login(req.getParameter("login"))
                 .password(req.getParameter("password"))
-                .build();
-        user = authDao.login(user);
-        if (user.getId() != 0) {
-            Util.USER = user;
-            resp.sendRedirect(req.getContextPath() + "/ads");
-        } else {
-            resp.sendRedirect(req.getContextPath() + "/signin");
-        }
+                .role_id(2)
+                .build());
+        resp.sendRedirect(req.getContextPath() + "/signin");
     }
 }

@@ -13,5 +13,6 @@ public class Ads {
     private String subtitle;
     private String description;
     private double price;
+    private String image;
     private int user_id;
 }
